@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
     thumbnail: thumbnail || ''
   })
 
-  res.json({ message: 'Producto creado' })
+  res.status(201).json({ message: 'Producto creado' })
 })
 
 router.put('/:pid', async (req, res) => {
@@ -58,7 +58,7 @@ router.put('/:pid', async (req, res) => {
     res.status(400).json({ message: 'Ingrese un ID válido' })
   }
 
-  const updatedProducts = await productManager.updateProduct({
+  await productManager.updateProduct({
     id: +pid,
     ...body
   })
