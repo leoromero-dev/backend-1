@@ -48,6 +48,7 @@ router.post('/', async (req, res) => {
   })
 
   res.status(201).json({ message: 'Producto creado' })
+  req.io.emit('product-added', title, price);
 })
 
 router.put('/:pid', async (req, res) => {
@@ -69,14 +70,18 @@ router.put('/:pid', async (req, res) => {
 router.delete('/:pid', async (req, res) => {
   const { pid } = req.params;
   const productExists = await productManager.getProductById(+pid);
-
+  
   if (!productExists || !pid) {
     res.status(400).json({ message: 'Ingrese un ID válido' })
   }
-
-  productManager.deleteProductById(+pid);
+  
+  await productManager.deleteProductById(+pid);
+  
+  const productList = await productManager.getProductList();
+  const isEmpty = productList.length === 0;
 
   res.status(200).json({ message: 'Producto eliminado' })
+  req.io.emit('product-deleted', +pid, isEmpty);
 })
 
 export default router;

@@ -36,7 +36,7 @@ class ProductManager {
   async addProduct(product) {
     this.productList = await this.getProductList();
     const ids = this.productList.flatMap(product => product.id);
-    const largestNumber = Math.max(...ids);
+    const largestNumber = ids.length ? Math.max(...ids) : 0;
     
     const newProduct = {
       ...product,
