@@ -1,5 +1,8 @@
 import express from 'express';
+import { Server } from 'socket.io';
 
+import { __dirname, hbs } from './utils.js';
+import ViewRouters from './routes/viewsRouters.route.js';
 import { __dirname, hbs } from './utils.js';
 import ViewRouters from './routes/viewsRouters.route.js';
 import ProductsRouter from './routes/products.router.js';
@@ -19,6 +22,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
+app.use('/', ViewRouters);
 app.use('/', ViewRouters);
 app.use('/api/products', ProductsRouter);
 app.use('/api/carts', CartsRouter);

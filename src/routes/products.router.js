@@ -109,9 +109,12 @@ router.delete('/:id', async (req, res) => {
   if (!productExists || !id) {
     res.status(400).json({ message: 'Ingrese un ID válido' })
   }
-
-  try {
+  
+  await try {
     await productModel.findByIdAndDelete(id);
+  
+  const productList = await productManager.getProductList();
+  const isEmpty = productList.length === 0;
 
     res.status(200).json({ message: 'Producto eliminado' })
   } catch {

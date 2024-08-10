@@ -1,6 +1,7 @@
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import handlebars from 'express-handlebars';
+import handlebars from 'express-handlebars';
 
 const __filename = fileURLToPath(import.meta.url);
 
