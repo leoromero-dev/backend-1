@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+#title {
+  color: #333;
+  text-align: center;
+  font-weight: 700;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+ul li {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul li h2 {
+  color: #0056b3;
+}
+
+#empty-state {
+  text-align: center;
+  margin-top: 200px;
+}
+
+a.disabled {
+  pointer-events: none;
+  color: grey;
+  cursor: default;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  color: #333;
+  padding: 10px 15px;
+  margin: 0 5px;
+  text-decoration: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #e0e0e0;
+}
+
+.pagination a.disabled {
+  pointer-events: none;
+  color: grey;
+  background-color: #f0f0f0;
+  cursor: default;
+}
+
+.pagination a.active {
+  font-weight: 700;
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.add-to-cart {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.add-to-cart:active {
+  background-color: #1e7e34;
+  transform: scale(1);
+}
+
+.delete-from-cart {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.delete-from-cart:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.delete-from-cart:active {
+  background-color: #bd2130;
+  transform: scale(1);
+}
