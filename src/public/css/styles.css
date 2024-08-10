@@ -98,6 +98,16 @@ a.disabled {
   transition: background-color 0.3s, transform 0.3s;
 }
 
+.cart-button {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
 .add-to-cart:hover {
   background-color: #218838;
   transform: scale(1.05);
@@ -126,4 +136,12 @@ a.disabled {
 .delete-from-cart:active {
   background-color: #bd2130;
   transform: scale(1);
+}
+
+.controls {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
 }

@@ -1,8 +1,5 @@
 import express from 'express';
-import { Server } from 'socket.io';
 
-import { __dirname, hbs } from './utils.js';
-import ViewRouters from './routes/viewsRouters.route.js';
 import { __dirname, hbs } from './utils.js';
 import ViewRouters from './routes/viewsRouters.route.js';
 import ProductsRouter from './routes/products.router.js';

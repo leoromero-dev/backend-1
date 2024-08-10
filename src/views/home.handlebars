@@ -1,15 +1,17 @@
 <div>
     <h1 id="title">Lista de productos</h1>
-    <form id="product-count-form" method="GET" action="/">
-        <label for="product-count">Mostrar:</label>
-        <select id="product-count" name="limit" onchange="document.getElementById('product-count-form').submit()">
-            <option value="5" {{#if (equal limit 5)}}selected{{/if}}>5 productos</option>
-            <option value="10" {{#if (equal limit 10)}}selected{{/if}}>10 productos</option>
-            <option value="25" {{#if (equal limit 25)}}selected{{/if}}>25 productos</option>
-            <option value="50" {{#if (equal limit 50)}}selected{{/if}}>50 productos</option>
-        </select>
-    </form>
-    <a id="cart-button" href="/cart">Ver carrito</a>
+    <div class="controls">
+        <form id="product-count-form" method="GET" action="/">
+            <label for="product-count">Mostrar:</label>
+            <select id="product-count" name="limit" onchange="document.getElementById('product-count-form').submit()">
+                <option value="5" {{#if (equal limit 5)}}selected{{/if}}>5 productos</option>
+                <option value="10" {{#if (equal limit 10)}}selected{{/if}}>10 productos</option>
+                <option value="25" {{#if (equal limit 25)}}selected{{/if}}>25 productos</option>
+                <option value="50" {{#if (equal limit 50)}}selected{{/if}}>50 productos</option>
+            </select>
+        </form>
+        <a id="cart-button" href="/cart" class="cart-button">Ver carrito</a>
+    </div>
     <ul id="products-list">
         {{#if products.length}}
         {{#each products}}
@@ -29,7 +31,8 @@
         <a href="?page={{subtract currentPage 1}}&limit={{limit}}">Anterior</a>
         {{/if}}
         {{#each (range 1 totalPages)}}
-        <a href="?page={{this}}&limit={{../limit}}" {{#if (equal ../currentPage this)}} class="active" {{/if}}>{{this}}</a>
+        <a href="?page={{this}}&limit={{../limit}}" {{#if (equal ../currentPage this)}} class="active"
+            {{/if}}>{{this}}</a>
         {{/each}}
         {{#if (lessThan currentPage totalPages)}}
         <a href="?page={{add currentPage 1}}&limit={{limit}}">Siguiente</a>
